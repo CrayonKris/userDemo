@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.bonc.dao.UserMapper">
+    <resultMap id="userMap" type="cn.com.bonc.entity.User">
+        <id property="userId" column="user_id"></id>
+        <result property="userName" column="user_name"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="trueName" column="true_name"></result>
+    </resultMap>
+    <!--<sql id="allFields">
+        user_id,
+        user_name,
+        gender,
+        age,
+        location,
+        password,
+        create_time,
+        true_name,
+        state
+    </sql>
+    &lt;!&ndash;增加一个用户&ndash;&gt;
+    <insert id="insertUser">
+        INSERT INTO user_info (user_name,gender,age,location,password,create_time,true_name,state)
+         VALUES (#{userName},#{gender},#{age},#{location},#{password},#{createTime},#{trueName},#{state})
+    </insert>
+    &lt;!&ndash;删除用户(伪删除)&ndash;&gt;
+    <update id="deleteUserByIds">
+        UPDATE user_info set state=0 WHERE user_id=#{userId}
+    </update>
+    &lt;!&ndash;修改用户信息&ndash;&gt;
+    <update id="updateUser">
+        UPDATE user_info
+        <set>
+            <if test="userName!=null">'user_name'=#{userName},</if>
+            <if test="gender!=null">'gender'=#{gender},</if>
+            <if test="age!=null">'age'=#{age},</if>
+            <if test="location!=null">'location'=#{location},</if>
+            <if test="password!=null">'password'=#{password},</if>
+            <if test="createTime!=null">'create_time'=#{createTime},</if>
+            <if test="trueName!=null">'true_name'=#{trueName},</if>
+            <if test="state!=null">'state'=#{state}</if>
+        </set>
+    </update>
+    &lt;!&ndash;查询所有用户&ndash;&gt;
+    <select id="findAll" resultMap="userMap">
+        SELECT <include refid="allFields"/> FROM user_info
+    </select>
+    &lt;!&ndash;查询某一用户&ndash;&gt;
+    <select id="findOne" resultMap="userMap">
+        SELECT <include refid="allFields"/> FROM user_info WHERE user_id = #{userId}
+    </select>-->
+</mapper>
